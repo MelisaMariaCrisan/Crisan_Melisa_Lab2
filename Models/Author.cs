@@ -10,7 +10,7 @@
         public string FullName => $"{FirstName} {LastName}";
 
         // Proprietate de navigare către cărți 
-        public ICollection<Book> Books { get; set; }
+        public ICollection<Book>? Books { get; set; }
         
     }
 }

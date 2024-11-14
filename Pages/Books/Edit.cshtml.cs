@@ -9,9 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Crisan_Melisa_lab2.Data;
 using Crisan_Melisa_lab2.Models;
 using Crisan_Melisa_lab2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Crisan_Melisa_lab2.Pages.Books
 {
+    [Authorize(Roles = "Admin")]
     public class EditModel : BookCategoriesPageModel
     {
         private readonly Crisan_Melisa_lab2.Data.Crisan_Melisa_lab2Context _context;

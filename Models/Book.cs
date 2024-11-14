@@ -7,19 +7,19 @@ namespace Crisan_Melisa_lab2.Models
     {
         public int ID { get; set; }
 
-
+        [Required(ErrorMessage = "Titlul cărții este obligatoriu.")]
+        [StringLength(150, MinimumLength = 3, ErrorMessage = "Titlul trebuie să aibă între 3 și 150 de caractere.")]
         [Display(Name = "Book Title")]
         public string Title { get; set; }
 
-
         public int? AuthorID { get; set; }
-        public Author? Author { get; set; } 
-
+        public Author? Author { get; set; }
 
         [Column(TypeName = "decimal(6, 2)")]
-        public decimal Price {  get; set; }
+        [Range(0.01, 500)]
+        public decimal Price { get; set; }
 
-        [DataType(DataType.Date)] 
+        [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
 
         public int? PublisherID { get; set; }
@@ -28,14 +28,6 @@ namespace Crisan_Melisa_lab2.Models
         public int? BorrowingID { get; set; }
         public ICollection<Borrowing>? Borrowings { get; set; }
 
-
-
         public ICollection<BookCategory>? BookCategories { get; set; }
-
-
-
-
-
-
     }
 }

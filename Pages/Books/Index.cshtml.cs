@@ -40,7 +40,7 @@ namespace Crisan_Melisa_lab2.Pages.Books
                 .ThenInclude(b => b.Category)
                 .AsNoTracking()
                 .OrderBy(b => b.Title)
-                .ToListAsync(); if (id != null)
+                .ToListAsync(); 
 
                 if (!String.IsNullOrEmpty(searchString))
                 {
